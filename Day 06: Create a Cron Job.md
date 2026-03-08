@@ -22,8 +22,14 @@ b. Add a cron `*/5 * * * * echo hello > /tmp/cron_text` for root user.
 ```
 crontab -e
 ```
-Insert the following line:
+   Insert the following line:
 ```
 */5 * * * * echo hello > /tmp/cron_text
 ```
-```
+
+5. Verify the cron job: \
+   `crontab -l`
+
+6. Run all the above commands on the remaining servers
+
+
