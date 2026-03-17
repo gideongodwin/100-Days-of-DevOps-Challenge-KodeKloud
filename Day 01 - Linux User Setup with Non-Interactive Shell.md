@@ -12,7 +12,7 @@ Create a user named `jim` with a non-interactive shell on `App Server 1`
     ```
     > When prompted, enter the password for user `tony`
   
-2. Create the User with a Non-Interactive Shell
+2. Create the user with a non-interactive shell
     ```
     useradd jim --shell /sbin/nologin
     ```
