@@ -9,7 +9,7 @@ Create a user named `jim` with a non-interactive shell on `App Server 1`
     ```sh
     ssh tony@stapp01
     ```
-- When prompted, enter the password for user `tony`
+    > When prompted, enter the password for user `tony`
   
 2. After signing in, switch to the root user: \
    `sudo su -` 
