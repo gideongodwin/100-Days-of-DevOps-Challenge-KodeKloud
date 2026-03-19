@@ -33,9 +33,10 @@ Look into the issue and fix the same.
    ```
    
 6. Start the MariaDB Service
-  ```
-  systemctl start mariadb
-  ```
+   ```
+   systemctl start mariadb
+   ```
+
 7. Verify MariaDB is Running
    ```
    systemctl status mariadb
