@@ -57,11 +57,11 @@ Our monitoring tool has reported an issue in `Stratos` Datacenter. One of our ap
     ```
     
 10. Restart the Apache service
-   ```
-   systemctl restart httpd`
-   ```
+      ```
+      systemctl restart httpd`
+      ```
 
 11. Go back to the jump host and verify:
-   ```
-   curl http://stapp02:3004
-   ```
+      ```
+      curl http://stapp02:3004
+      ```
