@@ -12,12 +12,12 @@ Set up a password-less authentication from user thor on jump host to all app ser
   ssh-keygen -t rsa
   ```
 
-2. Copy the public key to each App Server \
+2. Copy the public key to each App Server
   ```
   ssh-copy-id -i .ssh/id_rsa.pub tony@stapp01
   ```
 
-3.Test Password-less Login \
+3.Test Password-less Login
   ```
   ssh tony@stapp01
   ```
