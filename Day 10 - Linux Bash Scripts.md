@@ -58,12 +58,12 @@ The zip package must be installed on given App Server before executing the scrip
       ssh-copy-id -i ~/.ssh/id_ed25519.pub clint@ststor01
       ```
 
-8. Execute the script to perform the backup \
+8. Execute the script to perform the backup
    ```
    /scripts/beta_backup.sh
    ```
 
-9. Verify Backup Creation \
+9. Verify Backup Creation
    ```
    ls -l /backup/
    ```
