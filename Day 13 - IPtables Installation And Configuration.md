@@ -11,12 +11,12 @@ So we have decided to add some security layer for these hosts and after discussi
 3. Make sure the rules remain, even after system reboot.
 
 ## Steps:
-1. SSH into App Server 1 \
+1. SSH into App Server 1
 ```
 ssh tony@stapp01
 ```
 
-2. Install iptables and enable the service \
+2. Install iptables and enable the service
 ```
 yum install -y iptables iptables-services
 systemctl enable iptables
