@@ -9,6 +9,7 @@ The team wanted to start testing using Ansible, so they have decided to use jump
 ## STEPS:
 
 1. Install Ansible 4.8.0 using pip3
+   
     ```
     sudo pip3 install ansible==4.8.0
     ```
