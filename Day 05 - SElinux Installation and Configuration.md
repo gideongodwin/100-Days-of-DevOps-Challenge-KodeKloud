@@ -15,24 +15,25 @@ Following a security audit, the xFusionCorp Industries security team has opted t
    ```
    > When prompted, enter the password for user `banner`
 
-2. Switch to Root User \
-   `sudo -i`
-3. Install SELinux packages \
-   `yum install selinux* --skip-broken -y`
+2. Install SELinux packages
+   ```
+   yum install selinux* --skip-broken -y`
+   ```
 
-4. Edit the SELinux config file:
-```
+3. Edit the SELinux config file:
+   ```
    vi /etc/selinux/config
-```
-Find this line:
-```
-SELINUX=enforcing
-```
-Change it to:
-```
-SELINUX=disabled
+   ```
+   Find this line:
+   ```
+   SELINUX=enforcing
+   ```
+   Change it to:
+   ```
+   SELINUX=disabled
+   ```
 
-```
-
-5. Verify the current status: \
-   `sestatus`
+4. Verify the current status:
+   ```
+   sestatus
+   ```
