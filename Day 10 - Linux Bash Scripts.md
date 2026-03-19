@@ -54,9 +54,9 @@ The zip package must be installed on given App Server before executing the scrip
    ```
 
 7.  Copy the SSH key to the Storage Server
-   ```
-   ssh-copy-id -i ~/.ssh/id_ed25519.pub clint@ststor01
-   ```
+      ```
+      ssh-copy-id -i ~/.ssh/id_ed25519.pub clint@ststor01
+      ```
 
 8. Execute the script to perform the backup \
    ```
