@@ -9,7 +9,7 @@ The `Nautilus` system admins team has prepared scripts to automate several day-t
 ## Steps:
 1. Connect to the first app server and switch to root user
    ```
-   ssh tony@stapp01`
+   ssh tony@stapp01
    sudo -i
    ```
    > When prompted, enter the password for user `tony`
