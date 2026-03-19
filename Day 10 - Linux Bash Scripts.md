@@ -17,14 +17,20 @@ The zip package must be installed on given App Server before executing the scrip
 
 ## Steps:
 
-1. Connect to App Server 2 \
-   `ssh steve@stapp02`
+1. Connect to App Server 2
+```
+ssh steve@stapp02
+```
 
-2. Install the zip Package outside the script \
-   `sudo yum install zip -y`
+2. Install the zip Package outside the script
+   ```
+   sudo yum install zip -y
+   ```
 
-3. Navigate to the `/scripts` directory and create the script file \
-   `vi /scripts/beta_backup.sh`
+3. Navigate to the `/scripts` directory and create the script file
+   ```
+   vi /scripts/beta_backup.sh`
+   ```
 
 4. Inside the file, add the following script:
    ```
@@ -35,19 +41,29 @@ The zip package must be installed on given App Server before executing the scrip
    mv xfusioncorp_beta.zip /backup/
    echo "copying zip archive to backup server"
    scp /backup/xfusioncorp_beta.zip clint@ststor01:/backup/
+   ```
    
-5. Make the Script Executable \
-   `chmod +x /scripts/beta_backup.sh`
+5. Make the Script Executable
+   ```
+   chmod +x /scripts/beta_backup.sh
+   ```
 
-6. Configure Passwordless SSH Authentication \
-   `ssh-keygen`
+6. Configure Passwordless SSH Authentication
+   ```
+   ssh-keygen
+   ```
 
-7.  Copy the SSH key to the Storage Server \
-   `ssh-copy-id -i ~/.ssh/id_ed25519.pub clint@ststor01`
+7.  Copy the SSH key to the Storage Server
+   ```
+   ssh-copy-id -i ~/.ssh/id_ed25519.pub clint@ststor01
+   ```
 
 8. Execute the script to perform the backup \
-   `/scripts/beta_backup.sh`
+   ```
+   /scripts/beta_backup.sh
+   ```
 
-9. Verify Backup Creation \
-    `ls -l /backup/`
-
+10. Verify Backup Creation \
+   ```
+   ls -l /backup/
+   ```
