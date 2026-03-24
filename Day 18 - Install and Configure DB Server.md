@@ -2,10 +2,10 @@
 
 ## Task Details:
 We need to setup a database server on `Nautilus DB Server` in Stratos Datacenter. Please perform the below given steps on DB Server:
-  - Install/Configure MariaDB server.
-  - Create a database named kodekloud_db1.
-  - Create a user called kodekloud_joy and set its password to YchZHRcLkL.
-  - Grant full permissions to user kodekloud_joy on database kodekloud_db1.
+  - Install/Configure `MariaDB` server
+  - Create a database named `kodekloud_db1`
+  - Create a user called `kodekloud_joy` and set its password to `YchZHRcLkL`
+  - Grant full permissions to user `kodekloud_joy` on database `kodekloud_db1`
 
 ## Steps:
 
