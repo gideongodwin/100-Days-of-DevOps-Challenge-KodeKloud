@@ -29,80 +29,80 @@ The development team had a meeting with the production support team and they hav
    ```
 
 3. Configure nginx to use port `8094`
-```
-# Open the main configuration file:
-vi /etc/nginx/nginx.conf
-
-# edit the server block
-server {
-    listen 8094;
-    listen [::]:8094;
-    server_name _;
-
-    root /var/www/html;
-    index index.html index.php info.php;
-}
-```
+    ```
+    # Open the main configuration file:
+    vi /etc/nginx/nginx.conf
+    
+    # edit the server block
+    server {
+        listen 8094;
+        listen [::]:8094;
+        server_name _;
+    
+        root /var/www/html;
+        index index.html index.php info.php;
+    }
+    ```
 
 4. Start nginx
-```
-systemctl start nginx
-```
+    ```
+    systemctl start nginx
+    ```
 
 5. Install `php-fpm` 8.1
-```
-# Install the EPEL and Remi repositories.
-sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm -y
-sudo dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm -y
-
-# Enable the CodeReady Builder (CRB) repository
-sudo crb enable
-
-# Reset the default PHP module and enable the PHP 8.1 stream
-sudo dnf module reset php -y
-sudo dnf module enable php:remi-8.1 -y
-
-# Install PHP 8.1
-sudo dnf install php php-cli php-fpm -y
-
-# Verify the installation
-php -v
-```
+    ```
+    # Install the EPEL and Remi repositories.
+    sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm -y
+    sudo dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm -y
+    
+    # Enable the CodeReady Builder (CRB) repository
+    sudo crb enable
+    
+    # Reset the default PHP module and enable the PHP 8.1 stream
+    sudo dnf module reset php -y
+    sudo dnf module enable php:remi-8.1 -y
+    
+    # Install PHP 8.1
+    sudo dnf install php php-cli php-fpm -y
+    
+    # Verify the installation
+    php -v
+    ```
 
 6. Open the main configuration file:
-```
-vi /etc/nginx/nginx.conf
-```
+    ```
+    vi /etc/nginx/nginx.conf
+    ```
 
 7. Update the server block to configure php-fpm socket
-```
-server {
-    listen 8094;
-    listen [::]:8094;
-    server_name _;
-
-    root /var/www/html;
-    index index.html index.php info.php;
-
-    include /etc/nginx/default.d/*.conf;
-
-    location / {
-        try_files $uri $uri/ =404;
+    ```
+    server {
+        listen 8094;
+        listen [::]:8094;
+        server_name _;
+    
+        root /var/www/html;
+        index index.html index.php info.php;
+    
+        include /etc/nginx/default.d/*.conf;
+    
+        location / {
+            try_files $uri $uri/ =404;
+        }
+    
+        error_page 404 /404.html;
+        location = /404.html {}
+    
+        error_page 500 502 503 504 /50x.html;
+        location = /50x.html {}
+    
+        location ~ \.php$ {
+            fastcgi_pass unix:/var/run/php-fpm/default.sock;
+            fastcgi_index index.php;
+            include fastcgi.conf;
+        }
     }
-
-    error_page 404 /404.html;
-    location = /404.html {}
-
-    error_page 500 502 503 504 /50x.html;
-    location = /50x.html {}
-
-    location ~ \.php$ {
-        fastcgi_pass unix:/var/run/php-fpm/default.sock;
-        fastcgi_index index.php;
-        include fastcgi.conf;
-    }
-}
-```
+    ```
 
 8. Check nginx configuration
    ```
