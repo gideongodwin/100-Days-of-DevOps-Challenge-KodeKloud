@@ -18,10 +18,10 @@ Follow the provided details to clone the repository:
 
 2. Navigate to the target directory
     ```
-    cd /usr/src/kodekloudrepos
+    cd /usr/src/kodekloudrepos/
     ```
 
 3. Clone the repository
     ```
-    git clone /opt/media.git
+    git clone /opt/media.git/
     ```
