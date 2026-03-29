@@ -13,7 +13,7 @@ a. Create a database user kodekloud_top and set its password to TmPcZjtRQx.
 b. Create a database kodekloud_db4 and grant full permissions to user kodekloud_top on this database.
 
 
-Note: Please do not try to restart PostgreSQL server service.
+  > Note: Please do not try to restart PostgreSQL server service.
 
 ## Steps:
 
