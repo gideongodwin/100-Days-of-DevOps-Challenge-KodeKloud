@@ -6,9 +6,13 @@ xFusionCorp Industries is planning to host two static websites on their infra in
 The development of these websites is still in-progress, but we want to get the servers ready. Please perform the following steps to accomplish the task:
 
 - Install `httpd` package and dependencies on `app server 2`
+
 - Apache should serve on port `8086`
+
 - There are two website's backups `/home/thor/blog` and `/home/thor/cluster` on `jump_host`
+
   > Set them up on Apache in a way that blog should work on the link `http://localhost:8086/blog/` and cluster should work on link `http://localhost:8086/cluster/` on the mentioned app server.
+
 - Once configured you should be able to access the website using curl command on the respective app server, i.e `curl http://localhost:8086/blog/` and `curl http://localhost:8086/cluster/`
 
 ## Steps:
