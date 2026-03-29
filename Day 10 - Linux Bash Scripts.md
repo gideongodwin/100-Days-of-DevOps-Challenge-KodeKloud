@@ -10,10 +10,10 @@ The production support team of `xFusionCorp` Industries is working on developing
    - Copy the created archive to Nautilus Storage Server server in `/backup/` location.
    
    - Please make sure script won't ask for password while copying the archive file. Additionally, the respective server user (for example, tony in case of App Server 1) must be able to run it.
-
-- Do not use sudo inside the script.
-   Note:
-The zip package must be installed on given App Server before executing the script. This package is essential for creating the zip archive of the website files. Install it manually outside the script.
+   
+   - Do not use sudo inside the script.
+   
+   > Note: The zip package must be installed on given App Server before executing the script. This package is essential for creating the zip archive of the website files. Install it manually outside the script.
 
 ## Steps:
 
@@ -34,12 +34,12 @@ The zip package must be installed on given App Server before executing the scrip
 
 4. Inside the file, add the following script:
    ```
-   #!/bin/bash
-   echo "creating the zip archive"
-   zip -r xfusioncorp_beta.zip /var/www/html/beta
-
-   mv xfusioncorp_beta.zip /backup/
-   echo "copying zip archive to backup server"
+    #!/bin/bash
+    
+   # Create the zip file directly in the target directory
+   zip -r /backup/xfusioncorp_beta.zip /var/www/html/beta
+   
+   # Copy the archive using scp
    scp /backup/xfusioncorp_beta.zip clint@ststor01:/backup/
    ```
    
