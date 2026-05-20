@@ -1,5 +1,5 @@
 ## Day 64 - Fix Python App Deployed on Kubernetes Cluster
-
+ 
 ## Task Details:
 
 One of the DevOps engineers was trying to deploy a python app on Kubernetes cluster. Unfortunately, due to some mis-configuration, the application is not coming up.
