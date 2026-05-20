@@ -1,4 +1,4 @@
-<img width="818" height="461" alt="image" src="https://github.com/user-attachments/assets/d13d74c9-daf1-447b-b473-4225f1f96342" />## Day 64 - Fix Python App Deployed on Kubernetes Cluster
+## Day 64 - Fix Python App Deployed on Kubernetes Cluster
 
 ## Task Details:
 
