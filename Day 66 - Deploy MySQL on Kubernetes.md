@@ -28,4 +28,152 @@ Recently they were able to finalize the requirements and shared them with the te
 
 ## Steps:
 
-1. 
+1. Create the Secrets
+    ```
+    vi mysql-secrets.yaml
+    ```
+
+2. Paste the following configuration: 
+    ```
+    apiVersion: v1
+    kind: Secret
+    metadata:
+      name: mysql-root-pass
+    type: Opaque
+    stringData:
+      password: "YUIidhb667"
+    ---
+    apiVersion: v1
+    kind: Secret
+    metadata:
+      name: mysql-user-pass
+    type: Opaque
+    stringData:
+      username: "kodekloud_joy"
+      password: "YchZHRcLkL"
+    ---
+    apiVersion: v1
+    kind: Secret
+    metadata:
+      name: mysql-db-url
+    type: Opaque
+    stringData:
+      database: "kodekloud_db5"
+    ```
+
+3. Apply the following configuration:
+    ```
+    kubectl apply -f mysql-secrets.yaml
+    ```
+
+4. Configure Persistent Storage (PV and PVC)
+    ```
+    vi mysql-storage.yaml
+    ```
+
+5. Paste the following configuration:
+    ```
+    apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: mysql-pv
+    spec:
+      capacity:
+        storage: 250Mi
+      accessModes:
+        - ReadWriteOnce
+      hostPath:
+        path: "/mnt/data/mysql" # Preference: Using hostPath for local testing/deployment
+    ---
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: mysql-pv-claim
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 250Mi
+    ```
+
+6. Apply the following configuration:
+    ```
+    kubectl apply -f mysql-storage.yaml
+    ```
+
+7. Create the Deployment and Service
+    ```
+    vi mysql-deployment.yaml
+    ```
+
+8. Paste the following configuration:
+    ```
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: mysql-deployment
+      labels:
+        app: mysql
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: mysql
+      template:
+        metadata:
+          labels:
+            app: mysql
+        spec:
+          containers:
+          - name: mysql
+            image: mysql:5.7 # Preference: Using 5.7 for stability and lower memory overhead
+            ports:
+            - containerPort: 3306
+            env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-root-pass
+                  key: password
+            - name: MYSQL_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-db-url
+                  key: database
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-user-pass
+                  key: username
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-user-pass
+                  key: password
+            volumeMounts:
+            - name: mysql-storage
+              mountPath: /var/lib/mysql
+          volumes:
+          - name: mysql-storage
+            persistentVolumeClaim:
+              claimName: mysql-pv-claim
+    ---
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: mysql
+    spec:
+      type: NodePort
+      selector:
+        app: mysql
+      ports:
+        - port: 3306
+          targetPort: 3306
+          nodePort: 30007
+    ```
+
+9. Apply the following configuration:
+    ```
+    kubectl apply -f mysql-deployment.yaml
+    ```
