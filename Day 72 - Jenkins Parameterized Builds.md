@@ -28,15 +28,15 @@ Click on the `Jenkins` button on the top bar to access the Jenkins UI. Login usi
 
 2. Enter the provided credentials
 
-   <img width="990" height="389" alt="Screenshot 2026-06-01 155715" src="https://github.com/user-attachments/assets/3d979ee3-ffc4-49af-a464-1d6f7954176c" />
+      <img width="990" height="389" alt="Screenshot 2026-06-01 155715" src="https://github.com/user-attachments/assets/3d979ee3-ffc4-49af-a464-1d6f7954176c" />
 
 3. Go to the Jenkins dashboard, click New Item
 
-  <img width="949" height="170" alt="Screenshot 2026-06-03 091730" src="https://github.com/user-attachments/assets/f5081b0f-8ec6-42d0-9306-473731d46211" />
+     <img width="949" height="170" alt="Screenshot 2026-06-03 091730" src="https://github.com/user-attachments/assets/f5081b0f-8ec6-42d0-9306-473731d46211" />
 
 4. Name the job `parameterized-job` > select Freestyle project > click OK.
 
-  <img width="956" height="431" alt="Screenshot 2026-06-04 154943" src="https://github.com/user-attachments/assets/0e9051ea-237a-47bb-b3d5-fd062e8022b5" />
+     <img width="956" height="431" alt="Screenshot 2026-06-04 154943" src="https://github.com/user-attachments/assets/0e9051ea-237a-47bb-b3d5-fd062e8022b5" />
 
 5. In the General tab, check the box for `This project is parameterized`.
 
@@ -46,7 +46,7 @@ Click on the `Jenkins` button on the top bar to access the Jenkins UI. Login usi
     Default Value: Build
     ```
 
-   <img width="941" height="341" alt="Screenshot 2026-06-04 155226" src="https://github.com/user-attachments/assets/d531b366-5b45-4a01-afaf-ae2d14fedb60" />
+      <img width="941" height="341" alt="Screenshot 2026-06-04 155226" src="https://github.com/user-attachments/assets/d531b366-5b45-4a01-afaf-ae2d14fedb60" />
 
 
 7. Click Add Parameter > Choice Parameter and set it up:
@@ -57,7 +57,7 @@ Click on the `Jenkins` button on the top bar to access the Jenkins UI. Login usi
               Production
     ```
 
-    <img width="941" height="376" alt="Screenshot 2026-06-04 155334" src="https://github.com/user-attachments/assets/286e12ab-c7f1-43b6-9ff3-5493ff170138" />
+   <img width="941" height="376" alt="Screenshot 2026-06-04 155334" src="https://github.com/user-attachments/assets/286e12ab-c7f1-43b6-9ff3-5493ff170138" />
 
 8. Scroll down to the Build Steps section > Click the Add build step dropdown.
 
@@ -75,13 +75,13 @@ Click on the `Jenkins` button on the top bar to access the Jenkins UI. Login usi
 
 11. On the `parameterized-job` job page, click Build with Parameters.
 
-    <img width="959" height="424" alt="Screenshot 2026-06-04 155726" src="https://github.com/user-attachments/assets/780fb965-2f9d-4521-a145-6d7ce5bbd239" />
+       <img width="959" height="424" alt="Screenshot 2026-06-04 155726" src="https://github.com/user-attachments/assets/780fb965-2f9d-4521-a145-6d7ce5bbd239" />
 
 12. Click on the build number > Open the console output.
 
 13. Scroll to the bottom to verify the logs show a SUCCESS status
 
-    <img width="956" height="393" alt="Screenshot 2026-06-04 155749" src="https://github.com/user-attachments/assets/af28ffa3-a67a-4616-8195-48184e149c5e" />
+       <img width="956" height="393" alt="Screenshot 2026-06-04 155749" src="https://github.com/user-attachments/assets/af28ffa3-a67a-4616-8195-48184e149c5e" />
 
 
 
