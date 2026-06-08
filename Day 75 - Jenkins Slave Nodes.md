@@ -40,6 +40,23 @@ App_server_3 : `stapp03`
 
    <img width="941" height="255" alt="Screenshot 2026-06-01 160009" src="https://github.com/user-attachments/assets/9c862ea7-6fe5-4ee8-a880-336622e01533" />
 
-6. 
+6. Click on New Node
+
+   <img width="959" height="332" alt="Screenshot 2026-06-08 173334" src="https://github.com/user-attachments/assets/bb1d8537-e524-4ef7-93a2-1459fdcb130d" />
+
+7.  Name it `App_server_1` > Select Permanent Agent and click Create
+
+    <img width="961" height="415" alt="Screenshot 2026-06-08 173356" src="https://github.com/user-attachments/assets/e9a6e4d6-f7fb-4a3d-a24d-67013af7a758" />
+
+8. Fill in the configuration details:
+   ```
+   Number of executors: 1 (default is fine)
+   Remote root directory: /home/tony/jenkins
+   Labels: stapp01
+   Usage: Use this node as much as possible
+   Launch method: Select Launch agents via SSH
+   Host: stapp01
+   ```
+   > Credentials: Click the Add button -> click Jenkins
 
 
