@@ -12,11 +12,11 @@ Click on the `Jenkins` button on the top bar to access the Jenkins UI. Login usi
 
 2. Add labels as below:
 
-App_server_1 : `stapp01`
-
-App_server_2 : `stapp02`
-
-App_server_3 : `stapp03`
+    - App_server_1 : `stapp01`
+    
+    - App_server_2 : `stapp02`
+    
+    - App_server_3 : `stapp03`
 
 3. Remote root directory for `App_server_1` must be `/home/tony/jenkins`, for `App_server_2` must be `/home/steve/jenkins` and for `App_server_3` must be `/home/banner/jenkins`
 
@@ -49,14 +49,31 @@ App_server_3 : `stapp03`
     <img width="961" height="415" alt="Screenshot 2026-06-08 173356" src="https://github.com/user-attachments/assets/e9a6e4d6-f7fb-4a3d-a24d-67013af7a758" />
 
 8. Fill in the configuration details:
-   ```
-   Number of executors: 1 (default is fine)
-   Remote root directory: /home/tony/jenkins
-   Labels: stapp01
-   Usage: Use this node as much as possible
-   Launch method: Select Launch agents via SSH
-   Host: stapp01
-   ```
-   > Credentials: Click the Add button -> click Jenkins
 
+    <img width="938" height="684" alt="Screenshot 2026-06-08 174251" src="https://github.com/user-attachments/assets/7b1087e6-d59f-4544-9ec5-82739fff3ba6" />
 
+    > Launch method: Select Launch agents via SSH
+
+    > Click Add > Configure the following
+    
+    <img width="938" height="309" alt="Screenshot 2026-06-08 174310" src="https://github.com/user-attachments/assets/2e6f2061-af3f-49f1-82b4-9c87bea027f8" />
+    
+    <img width="940" height="438" alt="Screenshot 2026-06-08 174322" src="https://github.com/user-attachments/assets/5bbac354-01b4-4e8b-bb1c-a8c7a1b5916e" />
+
+    <img width="939" height="674" alt="Screenshot 2026-06-08 174400" src="https://github.com/user-attachments/assets/849943f3-1392-4716-a1ab-40a269cc05ba" />
+
+9. Then Save
+
+   <img width="937" height="426" alt="Screenshot 2026-06-08 174558" src="https://github.com/user-attachments/assets/a82af95c-6018-4607-ac55-00716673813b" />
+
+10. Repeat the same for creating App_server_2 : `stapp02` and App_server_3 : `stapp03`
+
+11. Go back to Manage Jenkins > Nodes
+
+12. Click on the App_server_1 > Log
+
+    <img width="382" height="434" alt="Screenshot 2026-06-08 175813" src="https://github.com/user-attachments/assets/3a20f888-fdce-4bd8-8584-18f3f6a84069" />
+
+13. Verify the Nodes are Online > Should show  "Agent successfully connected and online"
+
+    <img width="552" height="280" alt="Screenshot 2026-06-08 175822" src="https://github.com/user-attachments/assets/b6fbdab9-dc8a-4d4f-8f2a-a43f9fbd0d2d" />
