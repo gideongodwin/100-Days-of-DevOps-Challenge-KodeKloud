@@ -70,7 +70,11 @@ An `inventory` file is already placed under `/home/thor/ansible` directory on `j
           when: ansible_nodename == "stapp03"
     ```
 
-4. Run the Playbook
+4. Save and exit.
+    ```
+    :wq
+    ```
+5. Run the Playbook
     ```
     ansible-playbook -i inventory playbook.yml
     ```
