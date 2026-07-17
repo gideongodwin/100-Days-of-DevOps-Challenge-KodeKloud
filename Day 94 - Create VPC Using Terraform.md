@@ -37,17 +37,22 @@ To achieve this, they have segmented large tasks into smaller, more manageable u
     terraform init
     ```
 
-5. Review before applying changes
+5. Validate the configuration
+    ```
+    terraform validate
+    ```
+
+6. Review before applying changes
     ```
     terraform plan
     ```
 
-6. Apply the configuration
+7. Apply the configuration
     ```
     terraform apply -auto-approve
     ```
 
-7. Verify the resource
+8. Verify the resource
     ```
     terraform state list
     ```
