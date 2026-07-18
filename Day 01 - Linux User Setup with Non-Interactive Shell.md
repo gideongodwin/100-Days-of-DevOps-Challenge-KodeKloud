@@ -8,6 +8,8 @@
 1. SSH into the `app server 1` and switch to root user
     ```
     ssh tony@stapp01
+    ```
+    ```
     sudo -i
     ```
     > When prompted, enter the password for user `tony`
