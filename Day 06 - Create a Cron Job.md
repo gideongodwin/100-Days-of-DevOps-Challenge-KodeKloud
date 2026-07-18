@@ -1,15 +1,20 @@
 ## Day 6: Create a Cron Job
 
 ## Task Details:
+
 The `Nautilus` system admins team has prepared scripts to automate several day-to-day tasks. They want them to be deployed on all app servers in `Stratos DC` on a set schedule. Before that they need to test similar functionality with a sample cron job. Therefore, perform the steps below:
 
 - Install `cronie` package on all `Nautilus` app servers and start `crond` service.
+
 - Add a cron `*/5 * * * * echo hello > /tmp/cron_text` for root user.
 
 ## Steps:
-1. Connect to the first app server and switch to root user
+
+1. SSH into the first app server and switch to root user
    ```
    ssh tony@stapp01
+   ```
+   ```
    sudo -i
    ```
    > When prompted, enter the password for user `tony`
@@ -29,10 +34,10 @@ The `Nautilus` system admins team has prepared scripts to automate several day-t
    */5 * * * * echo hello > /tmp/cron_text
    ```
 
-5. Verify the cron job:
+4. Verify the cron job:
    ```
    crontab -l
    ```
-7. Run all the above commands on the remaining servers
+5. Run all the above commands on the remaining servers
 
 
