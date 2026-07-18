@@ -17,6 +17,8 @@ Following a security audit, the xFusionCorp Industries security team has opted t
 1. SSH into the app server and switch to root user
    ```
    ssh banner@stapp03
+   ```
+   ```
    sudo -i
    ```
    > When prompted, enter the password for user `banner`
