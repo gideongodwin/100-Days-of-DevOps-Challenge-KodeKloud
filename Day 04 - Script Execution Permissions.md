@@ -22,7 +22,7 @@
 
 3. Grant Execute Permission to All Users
    ```
-   chmod +rx /tmp/xfusioncorp.sh
+   chmod a+rx /tmp/xfusioncorp.sh
    ```
 
 4. Verify that the script is now executable
