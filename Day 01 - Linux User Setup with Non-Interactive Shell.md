@@ -5,7 +5,7 @@
 
 ## Steps:
 
-1. Log into the app server and switch to root user
+1. SSH into the `app server 1` and switch to root user
     ```
     ssh tony@stapp01
     sudo -i
