@@ -1,4 +1,4 @@
-## Day 6: Create a Cron Job
+## Day 6 - Create a Cron Job
 
 ## Task Details:
 
