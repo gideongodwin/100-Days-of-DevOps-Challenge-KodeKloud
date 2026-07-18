@@ -1,7 +1,8 @@
-## Day 10: Linux Bash Scripts
+## Day 10 - Linux Bash Scripts
 
 ## Task Details:
 The production support team of `xFusionCorp` Industries is working on developing some bash scripts to automate different day to day tasks. One is to create a bash script for taking websites backup.
+
 They have a static website running on App Server 2 in Stratos Datacenter, and they need to create a bash script named `beta_backup.sh` which should accomplish the following tasks. ( Also remember to place the script under `/scripts` directory on App Server 2 )
 
    - Create a zip archive named `xfusioncorp_beta.zip` of `/var/www/html/beta` directory.
@@ -28,20 +29,20 @@ They have a static website running on App Server 2 in Stratos Datacenter, and th
    sudo yum install zip -y
    ```
 
-3. Navigate to the `/scripts` directory and create the script file
+3. Create the script file
    ```
    vi /scripts/beta_backup.sh
    ```
 
 4. Inside the file, add the following script:
    ```
-    #!/bin/bash
+   #!/bin/bash
     
    # Create the zip file directly in the target directory
    zip -r /backup/xfusioncorp_beta.zip /var/www/html/beta
    
    # Copy the archive using scp
-   scp /backup/xfusioncorp_beta.zip clint@ststor01:/backup/
+   scp /backup/xfusioncorp_beta.zip natasha@ststor01:/backup/
    ```
    
 5. Make the Script Executable
@@ -51,12 +52,12 @@ They have a static website running on App Server 2 in Stratos Datacenter, and th
 
 6. Configure Passwordless SSH Authentication
    ```
-   ssh-keygen
+   ssh-keygen -t rsa
    ```
 
 7.  Copy the SSH key to the Storage Server
       ```
-      ssh-copy-id -i ~/.ssh/id_ed25519.pub clint@ststor01
+      ssh-copy-id -i ~/.ssh/id_rsa.pub natasha@ststor01
       ```
 
 8. Execute the script to perform the backup
