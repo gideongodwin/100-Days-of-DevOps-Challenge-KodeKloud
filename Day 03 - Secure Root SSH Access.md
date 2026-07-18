@@ -1,25 +1,24 @@
-## Day 3: Secure Root SSH Access
+## Day 3 - Secure Root SSH Access
 
 ## Task Details:
+
 - Disable direct SSH root login on all app servers within the `Stratos Datacenter`
 
 ## STEPS:
 
-1. Log into the first app server and switch to root user
+1. SSH into the first app server and switch to root user
     ```
     ssh tony@stapp01
     sudo -i
     ```
     > When prompted, enter the password for user `tony`
 
-2. Open the SSH Configuration File
+2. Open the SSH configuration file and modify the root login setting
    ```
    vi /etc/ssh/sshd_config
    ```
 
-3. Modify the Root Login Setting
-   - Find the line: PermitRootLogin `yes`
-   - Change it to: PermitRootLogin `no`
+3. Find the line: PermitRootLogin `yes`Change it to: PermitRootLogin `no`
   
 4. Save the File
     ```
@@ -28,11 +27,17 @@
 
 5. Restart the SSH Service
     ```
-    systemctl restart sshd`
+    systemctl restart sshd
     ```
-6. Exit the server
+6. Exit the server `stapp01`
     ```
     exit
     ```
-7. Repeat steps 1 to 6 for the remaining servers
+7. Test the Change
+    ```
+    ssh tony@stapp01
+    ```
+    > You should get: Permission denied
+
+8. Repeat steps 1 to 7 for the remaining servers
    
