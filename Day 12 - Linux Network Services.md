@@ -62,7 +62,7 @@ Our monitoring tool has reported an issue in `Stratos` Datacenter. One of our ap
     iptables -L -n
     ```
 
-10. Allow all incoming TCP traffic on port `3004` by placing the rule at the top of the firewall queue
+10. Allow all incoming TCP traffic on port `3004`
       ```
       iptables -I INPUT -p tcp --dport 3004 -j ACCEPT
       ```
