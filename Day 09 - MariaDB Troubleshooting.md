@@ -1,7 +1,10 @@
-## Day 9: MariaDB Troubleshooting
+## Day 9 - MariaDB Troubleshooting
 
 ## Task Details:
-There is a critical issue going on with the `Nautilus` application in `Stratos DC` The production support team identified that the application is unable to connect to the database. After digging into the issue, the team found that mariadb service is down on the database server.
+
+There is a critical issue going on with the `Nautilus` application in `Stratos DC` The production support team identified that the application is unable to connect to the database.
+
+After digging into the issue, the team found that mariadb service is down on the database server.
 Look into the issue and fix the same.
 
 ## Steps:
@@ -9,6 +12,8 @@ Look into the issue and fix the same.
 1. SSH into the Database Server and switch to root user
    ```
    ssh peter@stdb01
+   ```
+   ```
    sudo -i
    ```
 
@@ -19,7 +24,7 @@ Look into the issue and fix the same.
 
 3. Inspect the MariaDB data directory
    ```
-   ls -l /var/lib
+   ls -ld /var/lib/mysql
    ```
    
 4. Correct the Ownership of the MariaDB Data Directory
@@ -29,7 +34,7 @@ Look into the issue and fix the same.
 
 5. Confirm that the ownership has been corrected
    ```
-   ls -l /var/lib
+   ls -ld /var/lib/mysql
    ```
    
 6. Start the MariaDB Service
