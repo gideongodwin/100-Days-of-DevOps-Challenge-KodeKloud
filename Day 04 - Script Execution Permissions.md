@@ -1,4 +1,4 @@
-## Day 4: Script Execution Permissions
+## Day 4 - Script Execution Permissions
 
 ## Task Details:
 
