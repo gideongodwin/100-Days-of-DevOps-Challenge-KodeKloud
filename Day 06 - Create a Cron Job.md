@@ -22,7 +22,7 @@ The `Nautilus` system admins team has prepared scripts to automate several day-t
 2. Install cronie, start and verify crond service:
      ```
      yum install cronie -y
-     systemctl start crond
+     systemctl enable --now crond
      systemctl status crond
      ```
 3. Add the cron job:
