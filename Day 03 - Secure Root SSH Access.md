@@ -4,7 +4,7 @@
 
 - Disable direct SSH root login on all app servers within the `Stratos Datacenter`
 
-## STEPS:
+## Steps:
 
 1. SSH into the first app server and switch to root user
     ```
