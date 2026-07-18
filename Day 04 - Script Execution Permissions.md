@@ -2,12 +2,13 @@
 
 ## Task Details:
 
-- Grant executable permissions to the `/tmp/xfusioncorp.sh` script on `App Server 3`
+- Grant executable permissions to the `/tmp/xfusioncorp.sh` script on `App Server 1`
+
 - Ensure that all users have the capability to execute it.
 
-## STEPS: 
+## Steps: 
 
-1. Log into the app server and switch to root user
+1. SSH into the app server and switch to root user
     ```
     ssh tony@stapp01
     sudo -i
