@@ -1,4 +1,4 @@
-## Day 7 - Linux SSH Authentication
+## Day 7 - Linux SSH Authentication 
 
 ## Task Details:
 
