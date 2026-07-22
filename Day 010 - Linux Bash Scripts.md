@@ -1,4 +1,4 @@
-## Day 10 - Linux Bash Scripts
+## Day 10 - Linux Bash Scripts 
 
 ## Task Details:
 The production support team of `xFusionCorp` Industries is working on developing some bash scripts to automate different day to day tasks. One is to create a bash script for taking websites backup.
